@@ -29,78 +29,10 @@ locals {
       }
     }
 
-    cmplncemgrui_01 = {
-      name           = "abx-trafficmgrcmplncemgrui-${local.environment_name}-glb-traf-01"
-      routing_method = "Performance"
-      host_header    = "compliance-manager${local.ui_dns_suffix}.abx.live"
-      monitor_endpoint = "/api/readyz"
-      endpoints = {
-        we = {
-          name               = "abxkswe01"
-          target_resource_id = local.abx_aks01_we_target_id
-        }
-        ne = {
-          name               = "abxksne01"
-          target_resource_id = local.abx_aks01_ne_target_id
-        }
-      }
-    }
-
     sereneui_01 = {
       name           = "abx-trafficmgrsereneui-${local.environment_name}-glb-traf-01"
       routing_method = "Performance"
       host_header    = "serene${local.ui_dns_suffix}.abx.live"
-      monitor_endpoint = "/readyz"
-      endpoints = {
-        we = {
-          name               = "abxkswe01"
-          target_resource_id = local.abx_aks01_we_target_id
-        }
-        ne = {
-          name               = "abxksne01"
-          target_resource_id = local.abx_aks01_ne_target_id
-        }
-      }
-    }
-
-    carbonexposure_01 = {
-      name           = "abx-trafficmgrcarbonexposureui-${local.environment_name}-glb-traf-01"
-      routing_method = "Performance"
-      host_header    = "carbon-exposure${local.ui_dns_suffix}.abx.live"
-      monitor_endpoint = "/api/readyz"
-      endpoints = {
-        we = {
-          name               = "abxkswe01"
-          target_resource_id = local.abx_aks01_we_target_id
-        }
-        ne = {
-          name               = "abxksne01"
-          target_resource_id = local.abx_aks01_ne_target_id
-        }
-      }
-    }
-
-    carbonexposure_02 = {
-      name           = "abx-trafficmgrcarbonexposureui-${local.environment_name}-glb-traf-02"
-      routing_method = "Performance"
-      host_header    = "carbon-exposure-test.abx.live"
-      monitor_endpoint = "/api/readyz"
-      endpoints = {
-        we = {
-          name               = "abxkswe01"
-          target_resource_id = local.abx_aks01_we_target_id
-        }
-        ne = {
-          name               = "abxksne01"
-          target_resource_id = local.abx_aks01_ne_target_id
-        }
-      }
-    }
-
-    abxexample_01 = {
-      name           = "abx-trafficmgrabxexample-${local.environment_name}-glb-traf-01"
-      routing_method = "Performance"
-      host_header    = "abxexample-dev.abx.live"
       monitor_endpoint = "/readyz"
       endpoints = {
         we = {
